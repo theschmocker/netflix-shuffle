@@ -1,0 +1,27 @@
+<form class="episode-filter" [formGroup]="filterControls" *ngIf="seasons$ | async; let seasons">
+  <div class="episode-filter__controls">
+    <mat-form-field>
+      <mat-label>Start Season</mat-label>
+      <mat-select [value]="1" formControlName="start">
+        <mat-option *ngFor="let season of seasons | slice:0:seasons.length-1" [value]="season">
+          Season {{ season }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>End Season</mat-label>
+      <mat-select formControlName="end">
+        <mat-option *ngFor="let season of seasons | slice:filterControls.value.start" [value]="season">
+          Season {{ season }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button [color]="'primary'" mat-raised-button (click)="showRandom$.next(true)">Random</button>
+</form>
+
+<div class="episode-list">
+  <app-episode-card *ngFor="let episode of filteredEpisodes$ | async" [episode]="episode"></app-episode-card>
+</div>
+
+<app-full-screen-loader *ngIf="loading"></app-full-screen-loader>

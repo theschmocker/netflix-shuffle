@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber";
+@import "normalize";
+
+main {
+  padding: 1rem;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  max-width: 30rem;
+}

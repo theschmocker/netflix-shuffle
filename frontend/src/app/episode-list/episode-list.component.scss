@@ -1,0 +1,33 @@
+.episode-filter {
+    display: flex;
+    margin: 1rem auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__controls > * + * {
+        margin-left: 1rem;
+    }
+}
+
+.episode-list {
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    align-items: stretch;
+    grid-auto-rows: max-content;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @media (min-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.mat-dialog-container {
+    padding: 0;
+}

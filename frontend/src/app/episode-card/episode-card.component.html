@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title>
+        <span [innerHTML]="episode.title"></span>
+    </mat-card-title>
+
+    <mat-card-subtitle>
+        S{{ episode.seasnum }}E{{ episode.epnum }}
+    </mat-card-subtitle>
+
+    <img mat-card-image src="{{ episode.image }}" alt="">
+
+    <mat-card-content [innerHtml]="episode.synopsis"></mat-card-content>
+
+    <mat-card-actions>
+        <a target="_blank" href="http://netflix.com/watch/{{ episode.id }}" mat-button [color]="'primary'">
+            Watch
+        </a>
+    </mat-card-actions>
+</mat-card>
