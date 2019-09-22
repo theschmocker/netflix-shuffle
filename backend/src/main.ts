@@ -6,7 +6,11 @@ config();
 
 const origin = process.env.ENVIRONMENT === 'production'
   ? 'https://netflix-shuffle.netlify.com'
-  : 'http://localhost';
+  : [
+      // cover local dev and prod builds of frontend
+      'http://localhost:4200',
+      'http://localhost:5000',
+  ];
 
   console.log(origin);
 
