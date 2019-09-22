@@ -11,7 +11,7 @@ import { environment } from '../environments/environment';
 })
 export class EpisodeService {
   private baseUrl = environment.production 
-    ? 'http://netflix-shuffle.jacobschmocker.com/episode'
+    ? 'https://netflix-shuffle.jacobschmocker.com/episode'
     : 'http://localhost:3000/episode'
   private episodes$ = this.http.get<Episode[]>(this.baseUrl)
   
