@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: '*',
+    origin: 'https://netflix-shuffle.netlify.com',
   })
   await app.listen(3000);
 }
